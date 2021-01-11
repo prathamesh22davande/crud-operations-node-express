@@ -24,3 +24,15 @@ export const deleteUser = (req, res) => {
   users = users.filter((user) => user.id !== id);
   res.send(`User with ${id} deleted`);
 };
+
+export const updateUser = (req, res) => {
+  const { firstName, lastName, age } = req.body;
+  const { id } = req.params;
+  let user = users.find((user) => user.id == id);
+
+  if (firstName) user.firstName = firstName;
+  if (lastName) user.lastName = lastName;
+  if (age) user.age = age;
+
+  res.send(`User with id ${id} has been updated`);
+};
