@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use("/users", usersRoute);
 
 app.get("/", (req, res) => {
-  res.send("Home Page");
+  res.send("Default Route");
 });
 
 app.listen(PORT, () => console.log(`Server is listening on PORT : ${PORT}`));
